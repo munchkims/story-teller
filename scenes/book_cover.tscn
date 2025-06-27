@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://i0fhrbv8bhlp"]
+
+[ext_resource type="PackedScene" uid="uid://cu66lvii20km6" path="res://images/grimoire_-_morphose.glb" id="1_q54r2"]
+
+[node name="book_cover" instance=ExtResource("1_q54r2")]
+
+[node name="Skeleton3D" parent="Sketchfab_model/870222a2fbf04d53af2efa1490b14978_fbx/Object_2/RootNode/Armature/Object_5" index="0"]
+bones/1/rotation = Quaternion(0.49908, 0.499081, 0.500918, 0.500918)
+bones/3/rotation = Quaternion(0.49908, -0.499081, -0.500918, 0.500918)
+bones/6/rotation = Quaternion(-7.62624e-05, -0.00924219, -0.00823487, 0.999923)
+bones/8/position = Vector3(-0.00647196, 2.00558e-08, 0.247516)
+bones/8/rotation = Quaternion(0.707107, -0.000252068, 0.000252451, 0.707107)
+bones/11/rotation = Quaternion(-8.11972e-05, 0.00963143, 0.00846153, 0.999918)
+bones/13/position = Vector3(0.00696498, -1.23996e-07, 0.247875)
+bones/13/rotation = Quaternion(0.707107, 0.000250101, -0.000249697, 0.707106)

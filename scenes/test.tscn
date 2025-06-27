@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://brjw6c5hnpd6q"]
+
+[ext_resource type="Script" uid="uid://6jirg1071cvm" path="res://node_2d.gd" id="1_bl13t"]
+[ext_resource type="Texture2D" uid="uid://b1gcwu03uul1u" path="res://images/old-parchment-paper-sheet-vintage-aged-or-texture-background-png.png" id="2_bl13t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74lek"]
+radius = 100.319
+
+[node name="Test" type="Node2D"]
+modulate = Color(0.970612, 0.847286, 0.901931, 1)
+script = ExtResource("1_bl13t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(266, 295)
+scale = Vector2(1.71333, 1.71)
+texture = ExtResource("2_bl13t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(173, 202)
+shape = SubResource("CircleShape2D_74lek")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 12.0
+offset_top = 26.0
+offset_right = 91.0
+offset_bottom = 78.0
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

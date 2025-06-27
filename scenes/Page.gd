@@ -8,15 +8,15 @@ var adverbs = ["boldly", "mysteriously", "bravely", "fiercely", "quickly", "caut
 
 
 func set_number(value):
-	$Background/Number.text =  "- "+str(value) + " -"
+	$Background/Number.text = "- " + str(value) + " -"
 	$Background/Text.text = generate_placeholder_text(value)
 
 # Function to generate random placeholder text
-func generate_placeholder_text(seed : int):
-	var random_noun = nouns[seed % nouns.size()]
-	var random_verb = verbs[seed % verbs.size()]
-	var random_adjective = adjectives[seed % adjectives.size()]
-	var random_adverb = adverbs[seed % adverbs.size()]
+func generate_placeholder_text(_seed: int):
+	var random_noun = nouns[_seed % nouns.size()]
+	var random_verb = verbs[_seed % verbs.size()]
+	var random_adjective = adjectives[_seed % adjectives.size()]
+	var random_adverb = adverbs[_seed % adverbs.size()]
 
 	# Combine the randomly selected words into a sentence
 	var sentence = "The " + random_adjective + " " + random_noun + " " + random_verb + " " + random_adverb + "."

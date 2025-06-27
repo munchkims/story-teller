@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyspm3hy6o2oi"]
 
-[ext_resource type="Script" path="res://scenes/Page.gd" id="2"]
+[ext_resource type="Script" uid="uid://cbgvp6ygenice" path="res://scenes/Page.gd" id="2"]
 [ext_resource type="FontFile" uid="uid://bi2qn46sg7rk1" path="res://fonts/Sniglet-Regular.ttf" id="2_hfk0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64fw0"]
@@ -22,7 +22,7 @@ custom_minimum_size = Vector2(400, 600)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.94902, 0.941176, 0.803922, 1)
+color = Color(0.94902, 0.941176, 0.803922, 0.152941)
 
 [node name="Panel" type="Panel" parent="Background"]
 layout_mode = 1
@@ -61,3 +61,38 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hfk0q")
 text = "- 0 -"
 horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 521.0
+offset_right = 138.0
+offset_bottom = 545.0
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 552.0
+offset_right = 343.0
+offset_bottom = 576.0
+
+[node name="CheckButton3" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 36.0
+offset_right = 380.0
+offset_bottom = 60.0
+
+[node name="CheckButton4" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 566.0
+offset_right = 70.0
+offset_bottom = 590.0
+
+[node name="CheckButton5" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 535.0
+offset_right = 267.0
+offset_bottom = 559.0
