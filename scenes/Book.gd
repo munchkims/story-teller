@@ -7,7 +7,7 @@ var current_page_number = 1
 @onready var static_page = $Book/Static
 # This is displayed when pages are moving
 @onready var turning_page = $Book/Turning
-@onready var turning_animation = $Book/Turning/Page/Skeleton3D/AnimationPlayer
+@onready var turning_animation = $Book/Turning/AnimationPlayer
 
 # Pages when turning: left, animated side 1, animated side 2, right
 @onready var pf1 = $Book/Turning/PageLeft
@@ -32,7 +32,7 @@ var camera: Camera3D
 @onready var v5 = $Viewport5
 @onready var v6 = $Viewport6
 
-@onready var animationPlayer: AnimationPlayer = $Book/Turning/Page/Skeleton3D/AnimationPlayer
+@onready var animationPlayer: AnimationPlayer = $Book/Turning/AnimationPlayer
 
 @onready var node_viewport_left: SubViewport = $Viewport3
 @onready var node_viewport_right: SubViewport = $Viewport4
@@ -60,6 +60,8 @@ var last_hovered_side := "" # "left", "right", or ""
 var closed_book = false;
 
 @onready var book_animation_player: AnimationPlayer = $book_cover/AnimationPlayer2
+
+@onready var filler_pages: Node3D = $Book/FillerPages
 
 
 func _ready():
@@ -423,5 +425,13 @@ func close_book():
 	static_page.hide()
 	pf1.hide()
 	closed_book = true
+	close_filler()
 	animationPlayer.play("Turn2")
+	await get_tree().create_timer(0.2).timeout
 	book_animation_player.play("book_close")
+
+func close_filler():
+	var all_filler = filler_pages.get_children()
+	for child in all_filler:
+		child.turn_page()
+		await get_tree().create_timer(0.1).timeout

@@ -1,11 +1,22 @@
-[gd_scene load_steps=17 format=4 uid="uid://djit5sqhgkgc6"]
+[gd_scene load_steps=22 format=4 uid="uid://buiqj7egdsh4h"]
 
-[ext_resource type="Material" uid="uid://c1actdjvj2l0q" path="res://images/Book.tres" id="1_3dq51"]
-[ext_resource type="Script" uid="uid://dlt1sg53fqu4c" path="res://scenes/filler.gd" id="1_h3hrh"]
+[ext_resource type="Script" uid="uid://dhettb13mnqvh" path="res://scenes/Book.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://dyspm3hy6o2oi" path="res://scenes/Page.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://d1t3mise0xonp" path="res://sfx/page.ogg" id="3_krc24"]
+[ext_resource type="Texture2D" uid="uid://bt6b3gk7eqy8r" path="res://images/text-logo.webp" id="4_tbwyg"]
+[ext_resource type="Material" uid="uid://yj50jcpq200s" path="res://shader/shader_material.tres" id="5_gwv6w"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+
+[sub_resource type="QuadMesh" id="2"]
+
+[sub_resource type="StandardMaterial3D" id="3"]
+
+[sub_resource type="QuadMesh" id="4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k8k1"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j7cmg"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yjgwq"]
 resource_name = "PageAnimation_Plane_003"
 _surfaces = [{
 "aabb": AABB(0, -0.5, -4.37114e-08, 1, 1, 1e-05),
@@ -23,7 +34,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_mv4ga"]
+[sub_resource type="Skin" id="Skin_1evec"]
 resource_name = "Skin"
 bind_count = 3
 bind/0/name = &"Bone"
@@ -38,7 +49,7 @@ bind/2/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gql5v"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jua7n"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_duewi"]
 resource_name = "PageAnimation_Plane_002"
 _surfaces = [{
 "aabb": AABB(2.98023e-08, -0.5, 0, 1, 1, 1e-05),
@@ -188,26 +199,64 @@ _data = {
 &"TurnForward": SubResource("Animation_v23qq")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cea4q"]
+[sub_resource type="Sky" id="Sky_ajiwb"]
+sky_material = ExtResource("5_gwv6w")
 
-[sub_resource type="QuadMesh" id="QuadMesh_nthhm"]
+[sub_resource type="Environment" id="Environment_p8yur"]
+background_mode = 2
+sky = SubResource("Sky_ajiwb")
+ambient_light_source = 2
+ambient_light_color = Color(0.926105, 0.92545, 0.704782, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glbw4"]
+[node name="Book" type="Node3D"]
+script = ExtResource("2")
 
-[sub_resource type="QuadMesh" id="QuadMesh_3xlfy"]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 0.12, 2)
+doppler_tracking = 1
+fov = 57.1
 
-[node name="FillerPage" type="Node3D"]
-script = ExtResource("1_h3hrh")
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 2)
+shadow_enabled = true
+shadow_bias = 0.01
+omni_shadow_mode = 0
 
-[node name="Page" type="Node3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 2)
+light_color = Color(0.839118, 0.478693, 0.0486076, 1)
+light_energy = 1.585
+shadow_enabled = true
+shadow_bias = 0.01
+omni_shadow_mode = 0
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Page"]
+[node name="Book" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Static" type="Node3D" parent="Book"]
+
+[node name="PageLeft" type="MeshInstance3D" parent="Book/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+material_override = SubResource("1")
+mesh = SubResource("2")
+
+[node name="PageRight" type="MeshInstance3D" parent="Book/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+material_override = SubResource("3")
+mesh = SubResource("4")
+
+[node name="Turning" type="Node3D" parent="Book"]
+visible = false
+
+[node name="Page" type="Node3D" parent="Book/Turning"]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Book/Turning/Page"]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 bones/0/enabled = true
 bones/0/position = Vector3(0, -0.5, 0)
-bones/0/rotation = Quaternion(0, 1, 0, 4.37114e-08)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Bone.001"
 bones/1/parent = 0
@@ -224,29 +273,65 @@ bones/2/position = Vector3(1, 0, 0)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 
-[node name="Back" type="MeshInstance3D" parent="Page/Skeleton3D"]
-material_override = ExtResource("1_3dq51")
-mesh = SubResource("ArrayMesh_j7cmg")
-skin = SubResource("Skin_mv4ga")
+[node name="Back" type="MeshInstance3D" parent="Book/Turning/Page/Skeleton3D"]
+mesh = SubResource("ArrayMesh_yjgwq")
+skin = SubResource("Skin_1evec")
 
-[node name="Front" type="MeshInstance3D" parent="Page/Skeleton3D"]
-material_override = ExtResource("1_3dq51")
-mesh = SubResource("ArrayMesh_jua7n")
-skin = SubResource("Skin_mv4ga")
+[node name="Front" type="MeshInstance3D" parent="Book/Turning/Page/Skeleton3D"]
+mesh = SubResource("ArrayMesh_duewi")
+skin = SubResource("Skin_1evec")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Book/Turning"]
 libraries = {
 &"": SubResource("AnimationLibrary_eypoo")
 }
 
-[node name="PageLeft" type="MeshInstance3D" parent="."]
+[node name="PageLeft" type="MeshInstance3D" parent="Book/Turning"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_cea4q")
-mesh = SubResource("QuadMesh_nthhm")
+material_override = SubResource("1")
+mesh = SubResource("2")
 
-[node name="PageRight" type="MeshInstance3D" parent="."]
+[node name="PageRight" type="MeshInstance3D" parent="Book/Turning"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_glbw4")
-mesh = SubResource("QuadMesh_3xlfy")
+material_override = SubResource("3")
+mesh = SubResource("4")
+
+[node name="Viewport1" type="SubViewport" parent="."]
+size = Vector2i(400, 600)
+
+[node name="Page" parent="Viewport1" instance=ExtResource("3")]
+
+[node name="Viewport2" type="SubViewport" parent="."]
+size = Vector2i(400, 600)
+
+[node name="Page" parent="Viewport2" instance=ExtResource("3")]
+
+[node name="Viewport3" type="SubViewport" parent="."]
+size = Vector2i(400, 600)
+
+[node name="Page" parent="Viewport3" instance=ExtResource("3")]
+
+[node name="Viewport4" type="SubViewport" parent="."]
+size = Vector2i(400, 600)
+
+[node name="Page" parent="Viewport4" instance=ExtResource("3")]
+
+[node name="Viewport5" type="SubViewport" parent="."]
+size = Vector2i(400, 600)
+
+[node name="Page" parent="Viewport5" instance=ExtResource("3")]
+
+[node name="Viewport6" type="SubViewport" parent="."]
+size = Vector2i(400, 600)
+
+[node name="Page" parent="Viewport6" instance=ExtResource("3")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_krc24")
+
+[node name="Logo" type="Sprite3D" parent="."]
+transform = Transform3D(0.101, 0, 0, 0, 0.101, 0, 0, 0, 1, 0, 1.005, -0.05)
+texture = ExtResource("4_tbwyg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p8yur")
