@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c705v38vjdwn3"]
+[gd_scene load_steps=5 format=3 uid="uid://c705v38vjdwn3"]
 
 [ext_resource type="Script" uid="uid://31cjl7veik6l" path="res://scripts/line_drawing.gd" id="1_rsq33"]
+[ext_resource type="Texture2D" uid="uid://di26fr0omu8i7" path="res://images/—Pngtree—watercolor textures with black ink_5157008.png" id="2_eherj"]
 
 [sub_resource type="Curve" id="Curve_rsq33"]
-_data = [Vector2(0, 0.194886), 0.0, 0.0, 0, 0, Vector2(0.507205, 0.667614), 0.0, 0.0, 0, 0, Vector2(1, 0.180114), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.283297), 0.0, 0.0, 0, 0, Vector2(0.507205, 0.667614), 0.0, 0.0, 0, 0, Vector2(1, 0.269105), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_eherj"]
 
 [node name="Line Drawing" type="Node2D"]
 script = ExtResource("1_rsq33")
@@ -12,3 +15,6 @@ script = ExtResource("1_rsq33")
 [node name="Line2D" type="Line2D" parent="."]
 width_curve = SubResource("Curve_rsq33")
 default_color = Color(0.47451, 0.0117647, 0, 1)
+gradient = SubResource("Gradient_eherj")
+texture = ExtResource("2_eherj")
+texture_mode = 1

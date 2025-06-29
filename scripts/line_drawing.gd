@@ -15,6 +15,9 @@ func _input(event: InputEvent) -> void:
 				current_line.default_color = line_2d.default_color
 				current_line.width_curve = line_2d.width_curve
 				current_line.width = 7
+				current_line.gradient = line_2d.gradient
+				current_line.texture = line_2d.texture
+				current_line.texture_mode = Line2D.LINE_TEXTURE_STRETCH
 				line_2d.add_child(current_line)
 				current_line.add_point(event.position)
 	elif event is InputEventMouseMotion and _pressed:

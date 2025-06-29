@@ -57,7 +57,11 @@ var last_event_time := -1.0
 
 var last_hovered_side := "" # "left", "right", or ""
 
-var closed_book = false;
+var closed_book = false
+
+var feather_on = false
+
+@onready var feather = $feather
 
 @onready var book_animation_player: AnimationPlayer = $book_cover/AnimationPlayer2
 
@@ -91,22 +95,29 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		#jump(10)
-		close_book()
-
-
+		#close_book()
+		feather_mode()
+	
+	if (feather_on):
+		var mouse_pos = get_viewport().get_mouse_position()
+		var from = camera.project_ray_origin(mouse_pos)
+		var to = from + camera.project_ray_normal(mouse_pos) * 1000.0
+		var plane = Plane(Vector3(0, 0, 1), 0)
+		var intersection = plane.intersects_ray(from, to)
+		if intersection != null:
+			feather.global_transform.origin = intersection
+		#feather.position.x = get_viewport().get_mouse_position().x
+		#feather.position.y = get_viewport().get_mouse_position().y
 # func _process(_delta):
 # 	# Create a synthetic motion event
 # 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 # 		var viewport := get_viewport()
 # 		var mouse_pos = viewport.get_mouse_position()
 # 		var camera_v := get_viewport().get_camera_3d()
-
 # 		if !camera_v:
 # 			return
-
 # 		var from = camera_v.project_ray_origin(mouse_pos)
 # 		var to = from + camera_v.project_ray_normal(mouse_pos) * 1000
-
 # 		# Perform a raycast
 # 		var space_state = get_world_3d().direct_space_state
 # 		var query = PhysicsRayQueryParameters3D.new()
@@ -114,32 +125,24 @@ func _process(_delta):
 # 		query.to = to
 # 		query.collide_with_areas = true
 # 		query.collide_with_bodies = false
-
 # 		var result = space_state.intersect_ray(query)
-		
 # 		if result:
 # 			var collider = result.collider
 # 			var pos = result.position
-
 # 			if collider == node_area_left:
 # 				last_hovered_side = "left"
 # 				_send_motion_event_to_viewport(node_viewport_left, pos, node_quad_left)
-
 # 			elif collider == node_area_right:
 # 				last_hovered_side = "right"
 # 				_send_motion_event_to_viewport(node_viewport_right, pos, node_quad_right)
-
 # 			else:
 # 				# Still over same side, just keep feeding motion
 # 				if last_hovered_side == "left":
 # 					_send_motion_event_to_viewport(node_viewport_left, pos, node_quad_left)
 # 				elif last_hovered_side == "right":
 # 					_send_motion_event_to_viewport(node_viewport_right, position, node_quad_right)
-
 # 		else:
 # 			last_hovered_side = ""
-		
-		
 func cast_mouse_ray():
 	var mouse_pos = get_viewport().get_mouse_position()
 	var from = camera.project_ray_origin(mouse_pos)
@@ -435,3 +438,17 @@ func close_filler():
 	for child in all_filler:
 		child.turn_page()
 		await get_tree().create_timer(0.1).timeout
+
+func feather_mode():
+	feather.visible = !feather.visible
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * 1000.0
+	var plane = Plane(Vector3(0, 0, 1), 0)
+	var intersection = plane.intersects_ray(from, to)
+	if intersection != null:
+		feather.global_transform.origin = intersection
+
+	#feather.position.x = get_viewport().get_mouse_position().x
+	#feather.position.y = get_viewport().get_mouse_position().y
+	feather_on = feather.visible

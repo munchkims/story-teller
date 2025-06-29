@@ -21,6 +21,7 @@ project/assembly_name="Story Teller"
 
 [rendering]
 
+textures/canvas_textures/default_texture_repeat=1
 environment/defaults/default_environment="res://default_env.tres"
 anti_aliasing/icon=""
 anti_aliasing/name="Interactive 3D book"
