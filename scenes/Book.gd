@@ -428,7 +428,7 @@ func close_book():
 	close_filler()
 	animationPlayer.play("Turn2")
 	await get_tree().create_timer(0.2).timeout
-	book_animation_player.play("book_close")
+	book_animation_player.play_backwards("open_book")
 
 func close_filler():
 	var all_filler = filler_pages.get_children()

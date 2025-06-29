@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpvg3e4vm0fgb"
-path.s3tc="res://.godot/imported/book_black_magic_animated_2.png-5a5d008016d01d5f23a91206b9f04191.s3tc.ctex"
+uid="uid://doumkcjoyb58h"
+path.s3tc="res://.godot/imported/book_animated_book__historical_book_1.jpg-8b2653e3f52f79ce1e4cf7da8e67679b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3d15666a8e1d0b82ecb7633d42f672f7"
+"md5": "09348346e31c0abd829b0d1a2beb77c5"
 }
 
 [deps]
 
-source_file="res://images/book_black_magic_animated_2.png"
-dest_files=["res://.godot/imported/book_black_magic_animated_2.png-5a5d008016d01d5f23a91206b9f04191.s3tc.ctex"]
+source_file="res://images/book_animated_book__historical_book_1.jpg"
+dest_files=["res://.godot/imported/book_animated_book__historical_book_1.jpg-8b2653e3f52f79ce1e4cf7da8e67679b.s3tc.ctex"]
 
 [params]
 

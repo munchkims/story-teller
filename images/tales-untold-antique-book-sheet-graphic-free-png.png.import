@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dchtcqcwxjrvt"
-path.s3tc="res://.godot/imported/book_black_magic_animated_6.png-300b002d7b7f657b16f4a853c54f6cdc.s3tc.ctex"
+uid="uid://dbhjo1xjief2g"
+path.s3tc="res://.godot/imported/tales-untold-antique-book-sheet-graphic-free-png.png-69eeaa0212062dc0a62e250ddfef52d4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "7fca4b7dfaf772dc03a356a7260db27b"
-}
 
 [deps]
 
-source_file="res://images/book_black_magic_animated_6.png"
-dest_files=["res://.godot/imported/book_black_magic_animated_6.png-300b002d7b7f657b16f4a853c54f6cdc.s3tc.ctex"]
+source_file="res://images/tales-untold-antique-book-sheet-graphic-free-png.png"
+dest_files=["res://.godot/imported/tales-untold-antique-book-sheet-graphic-free-png.png-69eeaa0212062dc0a62e250ddfef52d4.s3tc.ctex"]
 
 [params]
 
