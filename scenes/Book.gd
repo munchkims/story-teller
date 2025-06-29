@@ -88,10 +88,12 @@ func _ready():
 	node_area_right.mouse_entered.connect(func(): _mouse_entered_area("right"))
 	node_area_right.mouse_exited.connect(func(): _mouse_exited_area("right"))
 	node_area_right.input_event.connect(_mouse_input_event)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	
 	animationPlayer.animation_finished.connect(_on_animation_finished)
 
+	
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		#jump(10)
@@ -105,9 +107,19 @@ func _process(_delta):
 		var plane = Plane(Vector3(0, 0, 1), 0)
 		var intersection = plane.intersects_ray(from, to)
 		if intersection != null:
-			feather.global_transform.origin = intersection
+			feather.global_transform.origin.x = intersection.x
+			feather.global_transform.origin.y = intersection.y
+		
+		#print(feather.position)
+		
 		#feather.position.x = get_viewport().get_mouse_position().x
 		#feather.position.y = get_viewport().get_mouse_position().y
+
+	# if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	# 	var f_pos = feather.position
+	# 	feather.position = Vector3(f_pos.x, f_pos.y, 0)
+
+
 # func _process(_delta):
 # 	# Create a synthetic motion event
 # 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -160,13 +172,23 @@ func cast_mouse_ray():
 			print("No mesh detected.")
 
 
-func _input(_event):
+func _input(event):
 	if turning_animation.is_playing():
 		return
 	if Input.is_action_just_pressed("ui_left"):
 		turn_left()
 	if Input.is_action_just_pressed("ui_right"):
 		turn_right()
+	
+	if event is InputEventMouseButton:
+		if event.pressed:
+			var f_pos = feather.position
+			feather.position = Vector3(f_pos.x, f_pos.y, 0)
+			print(feather.position)
+		if event.is_released():
+			var f_pos = feather.position
+			feather.position = Vector3(f_pos.x, f_pos.y, 0.01) # MAKE IT CONSTANT
+			print(feather.position)
 
 
 func turn_right():
@@ -265,7 +287,7 @@ func _mouse_entered_area(page: String) -> void:
 		is_mouse_inside_left = false
 		is_mouse_inside_right = true
 		
-	print("inside " + page)
+	#print("inside " + page)
 
 
 func _mouse_exited_area(page: String) -> void:
@@ -276,7 +298,7 @@ func _mouse_exited_area(page: String) -> void:
 		is_mouse_inside_left = false
 		is_mouse_inside_right = false
 		
-	print("outside " + page)
+	#print("outside " + page)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -447,7 +469,8 @@ func feather_mode():
 	var plane = Plane(Vector3(0, 0, 1), 0)
 	var intersection = plane.intersects_ray(from, to)
 	if intersection != null:
-		feather.global_transform.origin = intersection
+		feather.global_transform.origin.x = intersection.x
+		feather.global_transform.origin.y = intersection.y
 
 	#feather.position.x = get_viewport().get_mouse_position().x
 	#feather.position.y = get_viewport().get_mouse_position().y

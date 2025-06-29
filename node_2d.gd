@@ -5,7 +5,7 @@ var hovering
 @onready var area2d = $Area2D
 
 func _process(delta):
-	queue_redraw()
+	#queue_redraw()
 	var mouse_pos = get_viewport().get_mouse_position()
 	if is_point_inside_area2d(area2d, mouse_pos):
 		if not hovering:
@@ -26,8 +26,8 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_area_2d_mouse_entered() -> void:
 	modulate = Color.GREEN
 
-func _draw():
-	draw_circle(get_local_mouse_position(), 4, Color.RED)
+# func _draw():
+# 	draw_circle(get_local_mouse_position(), 4, Color.RED)
 
 func is_point_inside_area2d(area: Area2D, point: Vector2) -> bool:
 	var space_state = area.get_world_2d().direct_space_state
