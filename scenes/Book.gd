@@ -72,7 +72,7 @@ var target_rotation: Vector3 = Vector3(73, 43, 0)
 @onready var book_cover = $book_cover
 
 
-@onready var filler_pages: Node3D = $Book/FillerPages
+@onready var filler_pages: Node3D = $book_cover/FillerPages
 
 
 func _ready():
@@ -105,7 +105,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		#jump(10)
 		close_book()
-		move_cam()
+		#move_cam()
 		#feather_mode()
 	
 	if (feather_on):
@@ -121,7 +121,7 @@ func _process(delta):
 		#print(feather.position)
 
 	if camera_move:
-		camera.global_transform.origin = camera.global_transform.origin.lerp(target_pos, delta * 0.5)
+		camera.global_transform.origin = camera.global_transform.origin.lerp(target_pos, delta * 0.8)
 		book_cover.rotation_degrees.x = lerp(book_cover.rotation_degrees.x, target_rotation.x, delta * 0.5)
 		book_cover.rotation_degrees.y = lerp(book_cover.rotation_degrees.y, target_rotation.y, delta * 0.5)
 
@@ -199,7 +199,7 @@ func _input(event):
 			feather.position = Vector3(f_pos.x, f_pos.y, 0)
 		if event.is_released():
 			var f_pos = feather.position
-			feather.position = Vector3(f_pos.x, f_pos.y, 0.01) # MAKE IT CONSTANT
+			feather.position = Vector3(f_pos.x, f_pos.y, 0.03) # MAKE IT CONSTANT
 
 
 func turn_right():
@@ -491,3 +491,6 @@ func move_cam():
 	offset = camera.transform.basis.z * 1 + camera.transform.basis.x * 2
 	target_pos = camera.global_transform.origin + offset
 	camera_move = true
+
+func new_jump():
+	pass

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://djit5sqhgkgc6"]
+[gd_scene load_steps=18 format=4 uid="uid://djit5sqhgkgc6"]
 
 [ext_resource type="Material" uid="uid://c1actdjvj2l0q" path="res://images/Book.tres" id="1_3dq51"]
 [ext_resource type="Script" uid="uid://dlt1sg53fqu4c" path="res://scenes/filler.gd" id="1_h3hrh"]
+[ext_resource type="PackedScene" uid="uid://brjw6c5hnpd6q" path="res://scenes/test.tscn" id="3_f3tea"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k8k1"]
 
@@ -250,3 +251,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_glbw4")
 mesh = SubResource("QuadMesh_3xlfy")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(400, 600)
+render_target_update_mode = 1
+
+[node name="Test" parent="SubViewport" instance=ExtResource("3_f3tea")]

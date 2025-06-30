@@ -1618,6 +1618,9 @@ _data = {
 &"Animation": ExtResource("18_de5ui")
 }
 
+[sub_resource type="Animation" id="Animation_hp3is"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_p1lk8"]
 resource_name = "close_book"
 length = 6.66667
@@ -1723,9 +1726,6 @@ tracks/7/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/Node3D")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, -1, 7.54979e-08, 0.0333333, 1, 0, 0, -1, 7.54979e-08, 0.0666667, 1, 0, 0, -0.999906, 0.0137384, 0.1, 1, 0, 0, -0.998822, 0.0485246, 0.133333, 1, 0, 0, -0.994313, 0.106502, 0.166667, 1, 0, 0, -0.982849, 0.184412, 0.2, 1, 0, 0, -0.959317, 0.282332, 0.233333, 1, 0, 0, -0.921318, 0.38881, 0.266667, 1, 0, 0, -0.866788, 0.498678, 0.3, 1, 0, 0, -0.795069, 0.606519, 0.366667, 1, 0, 0, -0.606518, 0.795069, 0.4, 1, 0, 0, -0.498677, 0.866788, 0.433333, 1, 0, 0, -0.38881, 0.921318, 0.466667, 1, 0, 0, -0.282332, 0.959317, 0.5, 1, 0, 0, -0.184412, 0.982849, 0.533333, 1, 0, 0, -0.106502, 0.994313, 0.566667, 1, 0, 0, -0.0485246, 0.998822, 0.6, 1, 0, 0, -0.0137383, 0.999906, 0.633333, 1, 0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_hp3is"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qp1ud"]
 _data = {
