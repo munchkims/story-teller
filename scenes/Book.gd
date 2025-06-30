@@ -70,10 +70,12 @@ var target_rotation: Vector3 = Vector3(73, 43, 0)
 
 @onready var book_animation_player: AnimationPlayer = $book_cover/AnimationPlayer2
 @onready var book_cover = $book_cover
+var is_jumping = false
 
 
 @onready var filler_pages: Node3D = $book_cover/FillerPages
-
+@onready var filler_pages_jump: Node3D = $book_cover/FillerPagesJUMP
+@onready var closest_page = $book_cover/FillerPagesJUMP/FillerPage6
 
 func _ready():
 	update_page_number()
@@ -104,6 +106,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		#jump(10)
+		#new_jump()
 		close_book()
 		#move_cam()
 		#feather_mode()
@@ -281,6 +284,8 @@ func set_texture(page, viewport):
 func _on_animation_finished(anim_name):
 	if (closed_book):
 		turning_page.hide()
+		return
+	if (is_jumping):
 		return
 	if anim_name == "Turn1":
 		update_page_number(2)
@@ -493,4 +498,36 @@ func move_cam():
 	camera_move = true
 
 func new_jump():
-	pass
+	var f_ps = filler_pages_jump.get_children()
+	# Page sets texture to the filler page (7th), not the actual page.
+	# Pages animation plays one by one, and 0.2 seconds before the last animation is finished, we:
+		# set the page viewport (the one that is actually gonna be open) - 2 of them
+		# set correct textures of othew viewports - like the ones that we will actually have - that's for later since we dont have it yet
+		# do the usual stuff where static pages appear
+	var p_text = closest_page.get_child(4)
+	var p_page = closest_page.get_node("Page/Skeleton3D/Front")
+	set_texture(pf1, v3)
+
+	set_texture(p_page, p_text) # Here its not usual pf2 - usual turning page
+	set_texture(pf3, v5) # whatever
+
+	set_texture(pf4, v6)
+
+	#closest_page.position.z += 1
+	
+	
+	hide_and_show(pf4) # whatever for now as well - but later it would be the page that gets open
+	
+	closest_page.show()
+	static_page.hide()
+	is_jumping = true
+	var count = f_ps.size()
+	for child in f_ps:
+		child.turn_right_page()
+		await get_tree().create_timer(0.1).timeout
+		count -= 1
+	
+	if count == 0:
+		is_jumping = false
+		turning_page.show()
+		turning_animation.play("Turn1")
