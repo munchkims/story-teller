@@ -75,7 +75,7 @@ var is_jumping = false
 
 @onready var filler_pages: Node3D = $book_cover/FillerPages
 @onready var filler_pages_jump: Node3D = $book_cover/FillerPagesJUMP
-@onready var closest_page = $book_cover/FillerPagesJUMP/FillerPage6
+@onready var closest_page = $book_cover/FillerPagesJUMP/FillerPage
 
 func _ready():
 	update_page_number()
@@ -106,8 +106,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		#jump(10)
-		#new_jump()
-		close_book()
+		new_jump()
+		#close_book()
 		#move_cam()
 		#feather_mode()
 	
@@ -465,6 +465,7 @@ func close_book():
 	turning_page.show()
 	static_page.hide()
 	pf1.hide()
+	
 	closed_book = true
 	close_filler()
 	animationPlayer.play("Turn2")
@@ -505,7 +506,14 @@ func new_jump():
 		# set correct textures of othew viewports - like the ones that we will actually have - that's for later since we dont have it yet
 		# do the usual stuff where static pages appear
 	var p_text = closest_page.get_child(4)
+	var v_child = v4.get_child(0)
 	var p_page = closest_page.get_node("Page/Skeleton3D/Front")
+	# var old_child = p_text.get_child(0)
+	# if old_child != null:
+	# 	old_child.queue_free()
+	v4.remove_child(v_child)
+	p_text.add_child(v_child)
+	
 	set_texture(pf1, v3)
 
 	set_texture(p_page, p_text) # Here its not usual pf2 - usual turning page
@@ -514,7 +522,6 @@ func new_jump():
 	set_texture(pf4, v6)
 
 	#closest_page.position.z += 1
-	
 	
 	hide_and_show(pf4) # whatever for now as well - but later it would be the page that gets open
 	

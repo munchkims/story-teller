@@ -13,7 +13,7 @@
 [ext_resource type="Animation" uid="uid://wbvojjuee568" path="res://animations/book_open.res" id="9_qbo12"]
 [ext_resource type="Texture2D" uid="uid://doumkcjoyb58h" path="res://images/book_animated_book__historical_book_1.jpg" id="12_p1lk8"]
 [ext_resource type="Texture2D" uid="uid://cu0fxffqqb1xi" path="res://images/book_animated_book__historical_book_0.png" id="13_7iv8e"]
-[ext_resource type="Texture2D" uid="uid://dc0j1meybykxu" path="res://images/book_animated_book__historical_book_2.png" id="14_qp1ud"]
+[ext_resource type="Texture2D" uid="uid://csndgou3cxm4i" path="res://images/book_animated_book__historical_book_2.png" id="14_qp1ud"]
 [ext_resource type="Texture2D" uid="uid://cgb4fetm1yvh2" path="res://images/grimoire_-_morphose_3.png" id="15_hp3is"]
 [ext_resource type="Animation" uid="uid://qmwy1825q3t6" path="res://animations/new_book_anim.res" id="15_u6yg1"]
 [ext_resource type="Texture2D" uid="uid://df7x8q5welh1j" path="res://images/Wooden Planks (58).png" id="16_7iv8e"]
@@ -1964,14 +1964,14 @@ mesh = SubResource("ArrayMesh_im4pr")
 skeleton = NodePath("")
 
 [node name="paper_39" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0898857, 0.0291347, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0898857, 0.0291347, 0)
 
 [node name="Object_10" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_39"]
 mesh = SubResource("ArrayMesh_aeuee")
 skeleton = NodePath("")
 
 [node name="paper_001_40" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899016, 0.0340582, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899016, 0.0340582, 0)
 visible = false
 
 [node name="Object_12" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_001_40"]
@@ -1979,7 +1979,7 @@ mesh = SubResource("ArrayMesh_uab87")
 skeleton = NodePath("")
 
 [node name="paper_002_41" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899024, 0.0389551, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899024, 0.0389551, 0)
 visible = false
 
 [node name="Object_14" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_002_41"]
@@ -1987,7 +1987,7 @@ mesh = SubResource("ArrayMesh_x6cho")
 skeleton = NodePath("")
 
 [node name="paper_003_42" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899045, 0.0439759, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899045, 0.0439759, 0)
 visible = false
 
 [node name="Object_16" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_003_42"]
@@ -1995,7 +1995,7 @@ mesh = SubResource("ArrayMesh_0q4li")
 skeleton = NodePath("")
 
 [node name="paper_004_43" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899258, 0.0491818, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899258, 0.0491818, 0)
 visible = false
 
 [node name="Object_18" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_004_43"]
@@ -2003,7 +2003,7 @@ mesh = SubResource("ArrayMesh_hayef")
 skeleton = NodePath("")
 
 [node name="paper_005_44" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899492, 0.0544827, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899492, 0.0544827, 0)
 visible = false
 
 [node name="Object_20" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_005_44"]
@@ -2011,7 +2011,7 @@ mesh = SubResource("ArrayMesh_srh2s")
 skeleton = NodePath("")
 
 [node name="paper_006_45" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899651, 0.0598324, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899651, 0.0598324, 0)
 visible = false
 
 [node name="Object_22" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_006_45"]
@@ -2019,7 +2019,7 @@ mesh = SubResource("ArrayMesh_8y363")
 skeleton = NodePath("")
 
 [node name="paper_007_46" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899893, 0.0653224, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899893, 0.0653224, 0)
 visible = false
 
 [node name="Object_24" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_007_46"]
@@ -2027,7 +2027,7 @@ mesh = SubResource("ArrayMesh_5skvw")
 skeleton = NodePath("")
 
 [node name="paper_008_47" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899307, 0.0697766, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899307, 0.0697766, 0)
 visible = false
 
 [node name="Object_26" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_008_47"]
@@ -2035,7 +2035,7 @@ mesh = SubResource("ArrayMesh_ai4b8")
 skeleton = NodePath("")
 
 [node name="paper_009_48" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899164, 0.0754093, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899164, 0.0754093, 0)
 visible = false
 
 [node name="Object_28" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_009_48"]
@@ -2043,7 +2043,7 @@ mesh = SubResource("ArrayMesh_5iep3")
 skeleton = NodePath("")
 
 [node name="paper_010_49" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899119, 0.0807154, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0899119, 0.0807154, 0)
 visible = false
 
 [node name="Object_30" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_010_49"]
@@ -2051,7 +2051,7 @@ mesh = SubResource("ArrayMesh_ke24s")
 skeleton = NodePath("")
 
 [node name="paper_011_50" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0897887, 0.0854856, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.0897887, 0.0854856, 0)
 visible = false
 
 [node name="Object_32" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_011_50"]
@@ -2059,7 +2059,7 @@ mesh = SubResource("ArrayMesh_3h5mt")
 skeleton = NodePath("")
 
 [node name="paper_012_51" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.71, 2.22045e-16, -9.70588e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.089832, 0.0908469, 0)
+transform = Transform3D(0.71, 2.22045e-16, -9.7059e-24, 0, -4.37114e-08, -1, -1.57652e-16, 1, -4.37114e-08, 0.089832, 0.0908469, 0)
 visible = false
 
 [node name="Object_34" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_012_51"]
@@ -2067,7 +2067,7 @@ mesh = SubResource("ArrayMesh_g5q3x")
 skeleton = NodePath("")
 
 [node name="paper_013_52" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.709995, -3.31056e-10, 0.0036865, 0.00261741, 1.7958e-07, -0.999993, -2.3505e-10, 1, 1.7958e-07, 0.0896508, 0.0955502, 0)
+transform = Transform3D(0.709995, -3.31056e-10, 0.00368649, 0.00261741, 1.78701e-07, -0.999993, -2.3505e-10, 1, 1.78701e-07, 0.0896508, 0.0955502, 0)
 visible = false
 
 [node name="Object_36" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_013_52"]
@@ -2075,7 +2075,7 @@ mesh = SubResource("ArrayMesh_d6gqx")
 skeleton = NodePath("")
 
 [node name="paper_014_53" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.708835, 7.16973e-11, 0.0572524, 0.0406492, -2.50258e-09, -0.99836, 5.09051e-11, 1, -2.50258e-09, 0.0876333, 0.0963189, 0)
+transform = Transform3D(0.708835, -3.44789e-09, 0.0572524, 0.0406492, 1.20348e-07, -0.99836, -2.448e-09, 1, 1.20348e-07, 0.0876333, 0.0963189, 0)
 visible = false
 
 [node name="Object_38" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_014_53"]
@@ -2083,7 +2083,7 @@ mesh = SubResource("ArrayMesh_xav4i")
 skeleton = NodePath("")
 
 [node name="paper_015_54" type="Node3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(0.69834, -1.1028e-08, 0.180483, 0.128143, 1.21202e-07, -0.983578, -7.82989e-09, 1, 1.21202e-07, 0.0812983, 0.089886, 0)
+transform = Transform3D(0.69834, -5.1551e-09, 0.180483, 0.128143, 5.66566e-08, -0.983578, -3.66012e-09, 1, 5.66566e-08, 0.0812983, 0.089886, 0)
 visible = false
 
 [node name="Object_40" type="MeshInstance3D" parent="book_cover/Sketchfab_model/root/GLTF_SceneRootNode/paper_015_54"]
@@ -2280,7 +2280,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00632334, 0, -0.184896)
 
 [node name="FillerPagesJUMP" type="Node3D" parent="book_cover"]
 transform = Transform3D(2.07312, 0, 0, 0, -1.2489e-07, 1.90476, 0, -2.8693, -8.3614e-08, -2.046, 0.451918, -0.0448797)
-visible = false
 
 [node name="FillerPage" parent="book_cover/FillerPagesJUMP" instance=ExtResource("4_6gi13")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01438, -8.88178e-16, -0.00331664)

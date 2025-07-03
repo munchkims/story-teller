@@ -255,6 +255,6 @@ mesh = SubResource("QuadMesh_3xlfy")
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(400, 600)
-render_target_update_mode = 1
+render_target_update_mode = 4
 
 [node name="Test" parent="SubViewport" instance=ExtResource("3_f3tea")]
